@@ -14,7 +14,7 @@ var app = new Vue({
     price: 0,
     nextPrice: 0,
     accountAddress: '',
-    metamaskMsg: '請安裝並登入Metamask',
+    metamaskMsg: '請安裝並登入 MetaMask',
   },
   computed: {
     shortContractAddress: function() {
@@ -44,7 +44,6 @@ var app = new Vue({
     },
     fetchContractState: function() {
       this.itemTokenContract.ownerOf(0).then((result) => {
-        console.log(result);
         this.owner = result._owner;
       });
       this.itemTokenContract.startingPriceOf(0).then((result) => {

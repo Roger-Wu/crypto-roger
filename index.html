@@ -13,7 +13,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'UA-101090572-3');
   </script>
 
@@ -39,9 +38,13 @@
         <h6>智能合約: <a :href="'https://etherscan.io/address/' + contractAddress">{{ shortContractAddress }}</a></h6>
         <h6>目前擁有者: <a :href="'https://etherscan.io/address/' + owner">{{ shortOwner }}</a></h6>
         <h6>目前價格: {{ priceInEth }} ETH</h6>
-        <h6>次一價格: {{ nextPriceInEth }} ETH</h6>
+        <h6>下個價格: {{ nextPriceInEth }} ETH</h6>
         <button @click="buy" class="btn btn-success active w-75 mx-auto">以 {{ priceInEth }} ETH 購買</button>
       </div>
+    </div>
+    <div class="mt-5 text-secondary">
+      <h6>請<a href="https://metamask.io/" target="_blank">安裝MetaMask</a>以完整體驗此遊戲</h6>
+      <h6>關於此遊戲的資訊請閱讀<a href="https://roger-wu.github.io/ponzi-scheme-games/" target="_blank">這篇文章</a></h6>
     </div>
   </div>
 
