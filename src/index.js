@@ -48,13 +48,13 @@ var app = new Vue({
         this.owner = result._owner;
       });
       this.itemTokenContract.startingPriceOf(0).then((result) => {
-        this.startingPrice = result._startingPrice.toNumber(); // BN -> number
+        this.startingPrice = result._startingPrice; // BN -> number
       });
       this.itemTokenContract.priceOf(0).then((result) => {
-        this.price = result._price.toNumber(); // BN -> number
+        this.price = result._price; // BN -> number
       });
       this.itemTokenContract.nextPriceOf(0).then((result) => {
-        this.nextPrice = result._nextPrice.toNumber(); // BN -> number
+        this.nextPrice = result._nextPrice; // BN -> number
       });
     },
     buy: function () {
