@@ -36,10 +36,10 @@
       <img width="256" height="256" src="https://avatars0.githubusercontent.com/u/6902276">
       <div style="padding: 20px 10px;">
         <h6>智能合約: <a :href="'https://etherscan.io/address/' + contractAddress">{{ shortContractAddress }}</a></h6>
-        <h6>目前擁有者: <a :href="'https://etherscan.io/address/' + owner">{{ shortOwner }}</a></h6>
+        <h6>前一贊助者: <a :href="'https://etherscan.io/address/' + owner">{{ shortOwner }}</a></h6>
         <h6>目前價格: {{ priceInEth }} ETH</h6>
         <h6>下個價格: {{ nextPriceInEth }} ETH</h6>
-        <button @click="buy" class="btn btn-success active w-75 mx-auto">以 {{ priceInEth }} ETH 購買</button>
+        <button @click="buy" class="btn btn-success active w-75 mx-auto">贊助 {{ priceInEth }} ETH</button>
       </div>
     </div>
     <div class="mt-5 text-secondary">
