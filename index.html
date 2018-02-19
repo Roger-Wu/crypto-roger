@@ -43,7 +43,7 @@
       </div>
     </div>
     <div class="mt-5 text-secondary">
-      <h6>請<a href="https://metamask.io/" target="_blank">安裝 MetaMask</a> 以完整體驗此遊戲</h6>
+      <h6 v-if="!isMetamaskInstalled">請<a href="https://metamask.io/" target="_blank">安裝 MetaMask</a> 以完整體驗此遊戲</h6>
       <h6>關於此遊戲的規則請參閱<a href="https://roger-wu.github.io/ponzi-scheme-games/" target="_blank">這篇文章</a></h6>
     </div>
   </div>

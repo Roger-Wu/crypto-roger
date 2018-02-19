@@ -8,6 +8,7 @@ const contracts = {
 var app = new Vue({
   el: '#app',
   data: {
+    isMetamaskInstalled: false,
     contractAddress: contracts.ItemToken.address,
     owner: '',
     startingPrice: 0,
@@ -21,7 +22,7 @@ var app = new Vue({
       return this.contractAddress.slice(0, 12) + '...';
     },
     shortOwner: function() {
-      return this.owner.slice(0, 12) + '...';
+      return (!this.owner) ? '' : this.owner.slice(0, 12) + '...';
     },
     startingPriceInEth: function() {
       return (this.startingPrice / 1000000000000000000).toFixed(6);
@@ -68,6 +69,7 @@ var app = new Vue({
   mounted () {
     if (typeof web3 !== 'undefined') {
       // Use Mist/MetaMask's provider
+      this.isMetamaskInstalled = true;
       web3js = new Web3(web3.currentProvider);
       this.startApp();
     } else {
