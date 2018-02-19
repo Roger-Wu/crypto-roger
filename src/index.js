@@ -14,7 +14,7 @@ var app = new Vue({
     price: 0,
     nextPrice: 0,
     accountAddress: '',
-    metamaskMsg: '請安裝並登入 MetaMask',
+    metamaskMsg: '請安裝 MetaMask 以完整體驗此遊戲',
   },
   computed: {
     shortContractAddress: function() {
