@@ -41,20 +41,19 @@ var app = new Vue({
 
       this.accountAddress = web3.eth.accounts[0];
 
-      this.fetchContractState();
+      this.fetchItemState(0);
     },
-    fetchContractState: function() {
-      this.itemTokenContract.ownerOf(0).then((result) => {
+    fetchItemState: function(itemId) {
+      this.itemTokenContract.allOf(itemId).then((result) => {
         this.owner = result._owner;
-      });
-      this.itemTokenContract.startingPriceOf(0).then((result) => {
         this.startingPrice = result._startingPrice; // BN -> number
-      });
-      this.itemTokenContract.priceOf(0).then((result) => {
         this.price = result._price; // BN -> number
-      });
-      this.itemTokenContract.nextPriceOf(0).then((result) => {
         this.nextPrice = result._nextPrice; // BN -> number
+      }).catch(() => {
+        setTimeout(() => {
+          // console.log('itemTokenContract.allOf error. retry in 1 second');
+          this.fetchItemState(itemId);
+        }, 1000);
       });
     },
     buy: function () {
